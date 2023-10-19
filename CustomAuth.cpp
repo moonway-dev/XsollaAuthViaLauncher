@@ -3,7 +3,7 @@
 
 const FString LAUNCHER_TOKEN_KEY = TEXT("xsolla-login-token");
 
-void UYourBlueprintFunctionLibrary::Perform(FAction onSuccess, FActionOnError onError)
+void UCustomAuth::Perform(FAction onSuccess, FActionOnError onError)
 {
     FString LauncherToken = GetLauncherToken();
     if (LauncherToken.IsEmpty())
@@ -26,7 +26,7 @@ void UYourBlueprintFunctionLibrary::Perform(FAction onSuccess, FActionOnError on
     }
 }
 
-FString UYourBlueprintFunctionLibrary::GetLauncherToken()
+FString UCustomAuth::GetLauncherToken()
 {
     TArray<FString> CommandLineArgs;
     FCommandLine::Parse(CommandLineArgs);
